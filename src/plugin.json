@@ -1,0 +1,29 @@
+{
+  "type": "panel",
+  "name": "Stocks Report",
+  "id": "yazzy-stocks-table-panel",
+
+  "info": {
+    "version": "0.0.3",
+    "description": "Table panel showing trends of stocks",
+    "author": {
+      "name": "A Hrubak, BT Plc"
+    },
+    "keywords": ["stocks", "trends", "table", "report", "panel"],
+    "links": [
+      {"name": "MIT Licence", "url": "https://github.com/BTplc/grafana-peak-report/blob/master/LICENSE"},
+      {"name": "Project Site", "url": "https://github.com/BTplc/grafana-peak-report"}
+    ],
+    "screenshots": [
+    ],
+    "logos": {
+      "small": "img/logo-stocks.jpg",
+      "large": "img/logo-stocks.jpg"
+    }
+  },
+
+  "dependencies": {
+    "grafanaVersion": "3.x.x",
+    "plugins": [ ]
+  }
+}

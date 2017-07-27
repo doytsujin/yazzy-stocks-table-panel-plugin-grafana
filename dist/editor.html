@@ -1,0 +1,93 @@
+<div class="col-md-3">
+  <div class="editor-row">
+    <div class="gf-form">
+      <label class="gf-form-label width-8">Top-Left Label</label>
+        <input type="text" class="input-small gf-form-input width-8"
+               ng-model="ctrl.panel.topLeftLabel" ng-change="ctrl.render()"/>
+    </div>
+  </div>
+
+  <div class="editor-row">
+    <div class="gf-form">
+      <label class="gf-form-label width-12">Row Name Components</label>
+        <input type="text" class="input-small gf-form-input width-4"
+               ng-model="ctrl.panel.nameComponentsRows" ng-change="ctrl.render()"/>
+    </div>
+    <div class="gf-form">
+      <label class="gf-form-label width-12">Column Name Compnts.</label>
+        <input type="text" class="input-small gf-form-input width-4"
+               ng-model="ctrl.panel.nameComponentsColumns" ng-change="ctrl.render()"/>
+    </div>
+  </div>
+
+  <div class="editor-row">
+    <div class="gf-form">
+        <label class="gf-form-label width-6">Units</label>
+        <div class="dropdown width-10"
+             ng-model="ctrl.panel.globalFormat"
+             dropdown-typeahead="ctrl.unitFormats"
+             dropdown-typeahead-on-select="ctrl.onEditorGlobalFormatSelect($subItem)">
+        </div>
+    </div>
+    <div class="gf-form">
+        <div class="gf-form">
+          <label class="gf-form-label width-6">Decimals</label>
+          <input type="text" class="input-small gf-form-input width-10"
+                 ng-model="ctrl.panel.globalDecimals" ng-change="ctrl.render()" />
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-9">
+  <div class="editor-row">
+    <div class="section gf-form-group">
+      <div class="gf-form" ng-repeat="rowspec in ctrl.panel.rowspec">
+        <!--
+        <label class="gf-form-label width-5">Title</label>
+        <input type="text" class="input-small gf-form-input width-9" ng-model="column.title" ng-change="ctrl.render()" ng-model-onblur=true/>
+        -->
+
+        <label class="gf-form-label width-3">Row</label>
+        <div class="gf-form width-9">
+          <input type="text" class="gf-form-input width-16"
+             ng-model="rowspec.match"
+             bs-typeahead="ctrl.rowNames"
+             ng-blur="ctrl.render()"/>
+        </div>
+
+        <gf-form-switch class="gf-form" label="higher≡better" label-class="width-7"
+             checked="rowspec.higherBetter" on-change="ctrl.render()">
+        </gf-form-switch>
+
+        <label class="gf-form-label width-5">Units</label>
+        <div class="dropdown width-9"
+             ng-model="rowspec.format"
+             dropdown-typeahead="ctrl.unitFormats"
+             dropdown-typeahead-on-select="ctrl.onEditorFormatSelect($subItem, rowspec)">
+        </div>
+
+        <div class="gf-form">
+          <label class="gf-form-label width-7">Decimals</label>
+          <input type="text" class="input-small gf-form-input width-3"
+                 ng-model="rowspec.decimals" ng-change="ctrl.render()" />
+        </div>
+
+        <label class="gf-form-label">
+          <a class="pointer" ng-click="ctrl.onEditorRemoveRowspecClick($index)">
+            <i class="fa fa-trash"/>
+          </a>
+        </label>
+      </div>
+		</div>
+	</div>
+  <div class="editor-row">
+    <div class="gf-form">
+      <label class="gf-form-label">
+        <a class="pointer" ng-click="ctrl.onEditorAddRowspecClick()">
+          Add Row Spec
+        </a>
+      </label>
+    </div>
+  </div>
+</div>
