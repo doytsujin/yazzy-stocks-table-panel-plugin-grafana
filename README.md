@@ -1,10 +1,12 @@
-# Grafana Peak Report
+# Grafana Stocks Report
 
-A peak report panel for [Grafana](http://grafana.org/).
+A stocks report panel for [Grafana](http://grafana.org/).
 
-![Peak Report Panel](https://raw.githubusercontent.com/BTplc/grafana-peak-report/master/src/img/peak_report_tutorial.gif)
+![Stocks Report Panel](doc/img/smart.png)
+![Stocks Report Panel](doc/img/smart2.png)
+![Stocks Report Panel](doc/img/smart3.png)
 
-This panel shows a table that summarises multiple series into a report of peak values. Each row is formed by grouping series together using the first few components of the metric name. The cells for a row are calculated using some or all of the series, filtered by regex. The value for a cell is the maximum or peak value across all the series matching the regex filter for the column.
+This plugin forked from [btplc-peak-report-panel](BTplc/grafana-peak-report).
 
 ## Compatibility
 
