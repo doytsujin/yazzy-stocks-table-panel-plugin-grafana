@@ -19,7 +19,7 @@ export class Builder {
   _shortName (series) {
     var rowsNameComponents = this.options.nameComponentsRows.split(',')
     var components = series.target.split('.')
-    return _.map(rowsNameComponents, (nc) => components[parseInt(nc)]).join('.')
+    return _.map(rowsNameComponents, (nc) => components[parseInt(nc)]).join('.').replace(/^\./, '').replace(/\.$/, '')
   }
 
   cols (seriesList = []) {
@@ -29,7 +29,7 @@ export class Builder {
     var columnsNameComponents = this.options.nameComponentsColumns.split(',')
     var columns = _.map(seriesList, (series) => {
       var components = series.target.split('.')
-      return _.map(columnsNameComponents, (nc) => components[parseInt(nc)]).join('.')
+      return _.map(columnsNameComponents, (nc) => components[parseInt(nc)]).join('.').replace(/^\./, '').replace(/\.$/, '')
     })
     columns = Array.from(new Set(columns))
     return _.map(columns, (label) => {
@@ -49,7 +49,7 @@ export class Builder {
     var rowsNameComponents = this.options.nameComponentsRows.split(',')
     var names = _.map(seriesList, (series) => {
       var components = series.target.split('.')
-      return _.map(rowsNameComponents, (nc) => components[parseInt(nc)]).join('.')
+      return _.map(rowsNameComponents, (nc) => components[parseInt(nc)]).join('.').replace(/^\./, '').replace(/\.$/, '')
     })
     return Array.from(new Set(names))
   }
